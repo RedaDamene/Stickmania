@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./JeuDuClavier.css";
+import backgroundImg from "../../assets/Stickmania.png";
 
 const JeuDuClavier: React.FC = () => {
   const mots = [
@@ -61,37 +62,39 @@ const JeuDuClavier: React.FC = () => {
   };
 
   return (
-    <div className="jeu-container">
-      {showLightbox ? (
-        <div className="lightbox">
-          <h2>Vous avez perdu !</h2>
-          <p>Essayez encore.</p>
-          <button onClick={restartGame}>Jeu suivant</button>
-        </div>
-      ) : isGameOver ? (
-        <div className="game-over">
-          <h2>{currentWordIndex === mots.length ? "Félicitations, vous avez gagné !" : "Perdu !"}</h2>
-          <button onClick={restartGame}>Rejouer</button>
-        </div>
-      ) : (
-        <div className="game">
-          <h1>Jeu du Clavier</h1>
-          <p className="timer">Temps restant : {timer} secondes</p>
-          <p className="lives">Vies restantes : ❤️ {lives}</p>
-          <p className="word">
-            Mot à écrire : <span>{mots[currentWordIndex]}</span>
-          </p>
-          <input
-            ref={inputRef}
-            type="text"
-            value={userInput}
-            onChange={handleInputChange}
-            className="input-box"
-            placeholder="Tapez ici..."
-            autoFocus
-          />
-        </div>
-      )}
+    <div className="background-container"> {/* Ajout du fond pleine page */}
+      <div className="jeu-container">
+        {showLightbox ? (
+          <div className="lightbox">
+            <h2>Vous avez perdu !</h2>
+            <p>Essayez encore.</p>
+            <button onClick={restartGame}>Jeu suivant</button>
+          </div>
+        ) : isGameOver ? (
+          <div className="game-over">
+            <h2>{currentWordIndex === mots.length ? "Félicitations, vous avez gagné !" : "Perdu !"}</h2>
+            <button onClick={restartGame}>Rejouer</button>
+          </div>
+        ) : (
+          <div className="game">
+            <h1>Jeu du clavier</h1>
+            <p className="timer">Temps restant : {timer} secondes</p>
+            <p className="lives">Vies restantes : ❤️ {lives}</p>
+            <p className="word">
+              Mot à écrire : <span>{mots[currentWordIndex]}</span>
+            </p>
+            <input
+              ref={inputRef}
+              type="text"
+              value={userInput}
+              onChange={handleInputChange}
+              className="input-box"
+              placeholder="Tapez ici..."
+              autoFocus
+            />
+          </div>
+        )}
+      </div>
     </div>
   );
 };
