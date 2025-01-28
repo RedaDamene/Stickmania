@@ -1,11 +1,11 @@
-// import React from 'react';
-import AppRoutes from './Routes'; // Importer AppRoutes
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
-const App = () => {
-  return <AppRoutes />; // Utiliser AppRoutes ici
-};
+function App() {
+  const [count, setCount] = useState(0)
 
-<<<<<<< HEAD
   return (
     <>
       <div>
@@ -33,6 +33,3 @@ const App = () => {
 }
 
 export default App
-=======
-export default App;
->>>>>>> 2c65272 (feat/12 Ajout bonton Jouer et Routes)
