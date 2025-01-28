@@ -1,84 +1,94 @@
+/* 🔹 Fond d'écran couvrant toute la page */
 .background-container {
-  position: fixed;
+  position: fixed; /* Fixe l'image de fond pour qu'elle ne bouge pas */
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: url("../../assets/Stickmaniajeu.png") no-repeat center center/cover;
-  z-index: -1;
+  width: 100vw; /* Largeur de l'écran */
+  height: 100vh; /* Hauteur de l'écran */
+  background: url("../../assets/Stickmaniajeu.png") no-repeat center center/cover; /* Image de fond */
+  z-index: -1; /* Place le fond derrière tout le contenu */
 }
 
+/* 🔹 Conteneur du jeu */
 .jeu-container {
-  font-family: Arial, sans-serif;
-  text-align: center;
+  font-family: Arial, sans-serif; /* Police d'écriture */
+  text-align: center; /* Centre le texte */
   padding: 20px;
-  max-width: 650px;
-  margin: 50px auto;
-  margin-top: 250px;
-  border-radius: 10px;
-  color: white;
-  position: relative;
-  min-height: 400px;
+  max-width: 650px; /* Largeur maximale du jeu */
+  margin: 50px auto; /* Centre le jeu horizontalement */
+  margin-top: 250px; /* Décale le jeu vers le bas */
+  border-radius: 10px; /* Coins arrondis */
+  color: white; /* Texte en blanc */
+  position: relative; /* Nécessaire pour superposer les éléments internes */
+  min-height: 400px; /* Hauteur minimale du conteneur */
 }
 
+/* 🔹 Styles pour le jeu en cours, l'écran de fin et la lightbox */
 .game, .game-over, .lightbox {
-  background: rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  border-radius: 10px;
-  display: inline-block;
+  background: rgba(0, 0, 0, 0.8); /* Fond semi-transparent noir */
+  padding: 20px; /* Espacement intérieur */
+  border-radius: 10px; /* Coins arrondis */
+  display: inline-block; /* Permet de centrer avec text-align */
 }
 
+/* 🔹 Titre principal du jeu */
 h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
+  font-size: 2em; /* Taille du titre */
+  margin-bottom: 20px; /* Espacement sous le titre */
 }
 
+/* 🔹 Affichage du compte à rebours */
 .timer {
-  font-size: 1.5em;
-  color: #ffcc00;
-  margin-bottom: 10px;
+  font-size: 1.5em; /* Taille du texte */
+  color: #ffcc00; /* Couleur jaune */
+  margin-bottom: 10px; /* Espacement sous le timer */
 }
 
+/* 🔹 Style du mot à taper */
 .word {
-  font-size: 1.2em;
-  margin-bottom: 15px;
+  font-size: 1.2em; /* Taille du texte */
+  margin-bottom: 15px; /* Espacement */
 }
 
+/* 🔹 Met en valeur le mot affiché */
 .word span {
-  font-weight: bold;
-  color: #ffcc00;
+  font-weight: bold; /* Texte en gras */
+  color: #ffcc00; /* Couleur jaune pour différencier */
 }
 
+/* 🔹 Champ de saisie */
 .input-box {
-  width: 80%;
-  padding: 10px;
-  font-size: 1.2em;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  outline: none;
+  width: 80%; /* Largeur du champ */
+  padding: 10px; /* Espacement intérieur */
+  font-size: 1.2em; /* Texte plus grand */
+  border: 1px solid #ddd; /* Bordure grise */
+  border-radius: 5px; /* Coins arrondis */
+  outline: none; /* Supprime le contour par défaut */
 }
 
+/* 🔹 Effet quand l'utilisateur clique sur l'input */
 .input-box:focus {
-  border-color: #ffcc00;
+  border-color: #ffcc00; /* Bordure jaune lorsqu'il est sélectionné */
 }
 
-/* Lightbox */
+/* 🔹 Lightbox : Affiche "Vous avez perdu" */
 .lightbox {
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  text-align: center;
+  background: rgba(0, 0, 0, 0.8); /* Fond sombre */
+  color: white; /* Texte blanc */
+  padding: 30px; /* Espacement intérieur */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre pour effet 3D */
+  text-align: center; /* Centre le texte */
 }
 
+/* 🔹 Bouton de la lightbox */
 .lightbox button {
-  background-color: #ffcc00;
-  color: black;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.2em;
-  margin-top: 10px;
+  background-color: #ffcc00; /* Fond jaune */
+  color: black; /* Texte noir */
+  padding: 10px 20px; /* Taille du bouton */
+  border: none; /* Supprime la bordure */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Curseur pointer (main) */
+  font-size: 1.2em; /* Taille du texte */
+  margin-top: 10px; /* Espacement en haut */
 }
