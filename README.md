@@ -27,7 +27,7 @@ Ce document décrit les conventions à respecter pour les noms de fichiers, doss
     src/
     ├── composants/
     │   ├── Button/
-    │   │   ├── Button.jsx
+    │   │   ├── Button.tsx
     │   │   ├── Button.module.css
     │   │   └── index.js
     ├── ui/
