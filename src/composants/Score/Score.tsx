@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './score_module.css'
 
 function Score() {
   const [count, setCount] = useState(0)
@@ -7,7 +8,7 @@ function Score() {
     <>
       <div>
         <label onClick={() => setCount((count) => count + 1)}>
-            Score {count}
+            Score : {count}
         </label>
       </div>
     </>
