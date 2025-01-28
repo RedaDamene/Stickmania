@@ -25,12 +25,12 @@ Ce document décrit les conventions à respecter pour les noms de fichiers, doss
   - Exemple :
     ```
     src/
-    ├── components/
+    ├── composants/
     │   ├── Button/
     │   │   ├── Button.jsx
     │   │   ├── Button.module.css
     │   │   └── index.js
-    ├── hooks/
+    ├── ui/
     ├── pages/
     ├── styles/
     ├── utils/
