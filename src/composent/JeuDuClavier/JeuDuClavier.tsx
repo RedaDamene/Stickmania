@@ -24,7 +24,6 @@ const JeuDuClavier: React.FC = () => {
 
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // 🔹 Mélange les mots au début du jeu
   useEffect(() => {
     setShuffledWords(shuffleArray(mots));
   }, []);
@@ -95,13 +94,12 @@ const JeuDuClavier: React.FC = () => {
         {showLightbox ? (
           <div className="lightbox">
             <h2>Vous avez perdu !</h2>
-            <p>Essayez encore.</p>
             <button onClick={restartGame}>Jeu suivant</button>
           </div>
         ) : isGameOver ? (
           <div className="game-over">
             <h2>{currentWordIndex === shuffledWords.length ? "Félicitations, vous avez gagné !" : "Perdu !"}</h2>
-            <button onClick={restartGame}>Rejouer</button>
+            <button onClick={restartGame}>Jeu suivant</button>
           </div>
         ) : (
           <div className="game">
