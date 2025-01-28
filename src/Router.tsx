@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import App from "./App";
+import JeuTiming from "./pages/Jeu-timing/Jeu-timing";
 
 export const Router = () => {
     return (
@@ -7,6 +8,7 @@ export const Router = () => {
             <Routes>
                 <Route path="/" element={<App />} />
                 <Route path="/app" element="Hello World" />
+                <Route path="/app/jeuTiming" element={<JeuTiming />} />
             </Routes>
         </BrowserRouter>
     );
