@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './score_module.css'
+import './Score.css'
 
 function Score() {
   const [count, setCount] = useState(0)
