@@ -1,0 +1,87 @@
+/* Overlay de la lightbox */
+.lightbox-overlay {
+  position: fixed; /* Positionne l'overlay sur tout l'écran */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex; /* Centre le contenu avec Flexbox */
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6); /* Fond noir semi-transparent */
+  z-index: 50; /* Superpose l'overlay au reste */
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out; /* Transition fluide pour l'apparition */
+}
+
+/* Contenu de la lightbox */
+.lightbox-content {
+  background: linear-gradient(135deg, #ffffff, #f3f3f3); /* Dégradé clair */
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 420px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre légère */
+  animation: fadeIn 0.5s ease-in-out; /* Animation d'entrée */
+  font-family: Arial, sans-serif;
+}
+
+/* Titre */
+.lightbox-content h2 {
+  font-size: 1.7em;
+  margin-bottom: 15px;
+  color: #333; /* Couleur sombre */
+}
+
+/* Texte */
+.lightbox-content p {
+  color: #555; /* Texte gris */
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Compte à rebours */
+.countdown {
+  font-size: 2em;
+  font-weight: bold;
+  color: #ff5722; /* Couleur orange vif */
+  animation: pulse 1s infinite; /* Animation pulsante */
+}
+
+/* Animation de fade-in */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.9); /* Apparition légèrement zoomée */
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+/* Animation du compte à rebours */
+@keyframes pulse {
+  0%, 100% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1); /* Effet d'agrandissement */
+  }
+}
+
+/* Animation pour la fermeture */
+.fade-out {
+  animation: fadeOut 0.5s ease-in-out forwards; /* Transition de sortie */
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+      transform: scale(1);
+  }
+  to {
+      opacity: 0;
+      transform: scale(0.9); /* Réduction progressive */
+  }
+}
