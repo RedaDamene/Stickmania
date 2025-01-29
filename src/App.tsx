@@ -1,11 +1,13 @@
 import './App.css'
-import TapeTaupe from './composants/TapeTaupe/TapeTaupe';
 
 function App() {
 
   return (    
     <>
-      <TapeTaupe/>
+      <div>
+        <h1>Home</h1>
+        <p>This is the home page</p>
+      </div>
     </>
   )
 }
