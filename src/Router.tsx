@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import App from "./App";
 import JeuTiming from "./pages/Jeu-timing/Jeu-timing";
 import ClicCouleur from "./composants/ClicCouleur/ClicCouleur";
+import JeuStopBar from "./pages/Jeu-stop-bar/JeuStopBar";
 
 export const Router = () => {
     return (
@@ -11,6 +12,7 @@ export const Router = () => {
                 <Route path="/app" element="Hello World" />
                 <Route path="/app/jeuTiming" element={<JeuTiming />} />
                 <Route path="/app/jeuClicCouleur" element={<ClicCouleur/>} />
+                <Route path="/app/JeuStopBar" element={<JeuStopBar/>} />
                 <Route path="*" element="404" />
             </Routes>
         </BrowserRouter>
