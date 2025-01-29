@@ -69,7 +69,7 @@ const ClicCouleur: React.FC = () => {
 
   useEffect(() => {
     if (jeuTerminé) {
-      navigate("/app/PageFin", { state: { score } });
+      navigate("/app/jeuStopBar");
     }
   }, [jeuTerminé, navigate, score]);
 
