@@ -1,11 +1,13 @@
 import './App.css'
-import TrouveIntru from './pages/JeuTrouveIntru/TrouveIntru';
 
 function App() {
 
-  return (
+  return (    
     <>
-      <TrouveIntru/>
+      <div>
+        <h1>Home</h1>
+        <p>This is the home page</p>
+      </div>
     </>
   )
 }
