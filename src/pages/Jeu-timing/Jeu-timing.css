@@ -4,21 +4,21 @@
     box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
     height: 100%;
     width: 100%;
     overflow: hidden;
 }
 
 .game-container {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    position: fixed;
     top: 0;
     left: 0;
 }
@@ -69,4 +69,11 @@ body {
 
 .game-button:hover {
     transform: scale(1.05);
+}
+
+.countdown {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: red;
+    font-weight: bold;
 }
