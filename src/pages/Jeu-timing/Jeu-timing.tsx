@@ -31,14 +31,13 @@ export default function JeuTiming() {
                 setEstActif(false)
                 setJeuDemarre(false)
                 setAPerdu(true)
-                setCompteARebours(3)
+                setCompteARebours(3)  // Redirection après timeout
             }, LIMITE_TEMPS)
 
             return () => clearTimeout(minuteurDefaite)
         }
     }, [estActif])
 
-    // Nouvelle logique pour le compte à rebours et la redirection
     useEffect(() => {
         if (compteARebours !== null && compteARebours > 0) {
             const timer = setTimeout(() => {
@@ -73,11 +72,11 @@ export default function JeuTiming() {
             if (reaction > LIMITE_TEMPS) {
                 setTempsReaction('Trop lent ! (plus de 500ms)')
                 setAPerdu(true)
-                setCompteARebours(3)
+                setCompteARebours(3)  // Redirection si trop lent
             } else {
                 setTempsReaction(reaction)
                 setAGagne(true)
-                setCompteARebours(3)
+                setCompteARebours(3)  // Redirection si gagné
             }
 
             setEstActif(false)
@@ -85,6 +84,8 @@ export default function JeuTiming() {
         } else if (!aPerdu && !aGagne) {
             setTempsReaction('Trop tôt !')
             setJeuDemarre(false)
+            setAPerdu(true)
+            setCompteARebours(3)  // Redirection si trop tôt
         }
     }
 

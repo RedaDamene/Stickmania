@@ -1,6 +1,7 @@
 /* Conteneur principal : taille pleine, centrage, dégradé en arrière-plan */
 .click-game-container {
-    min-height: 100vh;            /* Prend toute la hauteur de la fenêtre */
+    min-height: 100vh;      
+    min-width: 100vh;         /* Prend toute la hauteur de la fenêtre */
     display: flex;                /* Pour pouvoir centrer en flex */
     flex-direction: column;       /* Empile verticalement */
     align-items: center;          /* Centre horizontalement */

@@ -12,34 +12,34 @@
     justify-content: center;
     font-family: Arial, sans-serif;
     overflow: hidden;
-}
-
-/* Style du titre */
-.titre {
+  }
+  
+  /* Style du titre */
+  .titre {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1rem;
     color: white;
     text-align: center;
-}
-
-/* Informations sur le jeu */
-.info {
+  }
+  
+  /* Informations sur le jeu */
+  .info {
     font-size: 1.2rem;
     margin-bottom: 1rem;
     color: white;
-}
-
-/* Conteneur des cercles */
-.cercles-container {
+  }
+  
+  /* Conteneur des cercles */
+  .cercles-container {
     position: relative;
     width: 100%;
     height: 70vh;
     overflow: hidden;
-}
-
-/* Style des cercles */
-.cercle {
+  }
+  
+  /* Style des cercles */
+  .cercle {
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
@@ -47,20 +47,20 @@
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
     transition: transform 0.2s ease;
-}
-
-/* Effet au survol */
-.cercle:hover {
+  }
+  
+  /* Effet au survol */
+  .cercle:hover {
     transform: scale(1.2);
-}
-
-/* Section de fin de jeu */
-.fin-jeu {
+  }
+  
+  /* Section de fin de jeu */
+  .fin-jeu {
     text-align: center;
-}
-
-/* Bouton rejouer */
-button {
+  }
+  
+  /* Bouton rejouer */
+  button {
     margin-top: 1rem;
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
@@ -70,29 +70,29 @@ button {
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.2s ease;
-}
-
-button:hover {
+  }
+  
+  button:hover {
     background-color: #ddd;
-}
-
-/* Rendre le jeu responsive */
-@media screen and (max-width: 768px) {
+  }
+  
+  /* Rendre le jeu responsive */
+  @media screen and (max-width: 768px) {
     .cercle {
-        width: 3rem;
-        height: 3rem;
+      width: 3rem;
+      height: 3rem;
     }
-
+  
     .titre {
-        font-size: 1.5rem;
+      font-size: 1.5rem;
     }
-
+  
     .info {
-        font-size: 1rem;
+      font-size: 1rem;
     }
-
+  
     button {
-        font-size: 0.9rem;
-        padding: 0.6rem 1rem;
+      font-size: 0.9rem;
+      padding: 0.6rem 1rem;
     }
-}
+  }

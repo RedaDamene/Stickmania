@@ -76,7 +76,9 @@ const TrouveIntru: React.FC = () => {
   };
 
   return (
-    <div className="trouveIntru">
+    <div className="trouve-intru-container">
+      <div className="game-title">Trouve l'Intru</div>
+      
       <div className="game-header">
         <div className="round">Niveau: {round}/4</div>
         <div className="timer">Temps: {timer}s</div>
@@ -85,13 +87,18 @@ const TrouveIntru: React.FC = () => {
       {!gameOver && !gameWon ? (
         <div
           className="grid"
-          style={{ gridTemplateColumns: `repeat(${gridSize}, 80px)` }}
+          style={{
+            gridTemplateColumns: `repeat(${gridSize}, 1fr)`,
+            maxWidth: `${gridSize * 100}px`
+          }}
         >
           {[...Array(gridSize * gridSize)].map((_, index) => (
             <button
               key={index}
               className="color-button"
-              style={{ backgroundColor: index === intruderIndex ? intruderColor : baseColor }}
+              style={{
+                backgroundColor: index === intruderIndex ? intruderColor : baseColor
+              }}
               onClick={() => handleClick(index)}
             ></button>
           ))}

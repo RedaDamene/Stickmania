@@ -92,7 +92,7 @@ const JeuMorpion: React.FC = () => {
 
   return (
     <div className="morpion-container">
-      <h1>Jeu du morpion (VS Bot)</h1>
+      <h1 style={{ color: 'black' }}>Jeu du morpion (VS Bot)</h1>
       <p>{isXNext ? "C'est à vous (X)" : "Le bot joue (O)"}</p>
 
       <div className="board">

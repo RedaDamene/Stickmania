@@ -1,68 +1,83 @@
-/* 🎯 Conteneur principal du jeu */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+/* Conteneur principal du jeu */
 .morpion-container {
-    font-family: Arial, sans-serif; /* Police générale */
-    text-align: center; /* Centrer les éléments */
-    margin-top: 50px; /* Espacement par rapport au haut de la page */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  color: #333;
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* 🎯 Plateau de jeu 3x3 */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Plateau de jeu 3x3 */
 .board {
-    display: grid; /* Utilisation de CSS Grid pour disposer les cases */
-    grid-template-columns: repeat(3, 100px); /* 3 colonnes de 100px */
-    grid-template-rows: repeat(3, 100px); /* 3 lignes de 100px */
-    gap: 5px; /* Espacement entre les cases */
-    justify-content: center; /* Centre le plateau horizontalement */
-    margin: 20px auto; /* Marge extérieure et centrage automatique */
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: repeat(3, 120px);
+  gap: 10px;
+  justify-content: center;
+  margin: 30px auto;
 }
 
-/* 🎯 Style de chaque case du morpion */
+/* Style de chaque case du morpion */
 .cell {
-    width: 100px; /* Largeur d'une case */
-    height: 100px; /* Hauteur d'une case */
-    font-size: 2em; /* Taille du texte X ou O */
-    font-weight: bold; /* Rendre le texte en gras */
-    text-align: center; /* Centrer le texte */
-    background-color: #f3f3f3; /* Couleur de fond */
-    border: 2px solid #333; /* Bordure foncée */
-    cursor: pointer; /* Curseur en forme de main pour indiquer le clic */
-    transition: background 0.3s; /* Animation fluide pour hover */
+  width: 120px;
+  height: 120px;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: #f5f5f5;
+  border: 2px solid #333;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
 }
 
-/* 🎨 Effet de survol */
 .cell:hover {
-    background-color: #e0e0e0; /* Change légèrement la couleur au survol */
+  background-color: #e0e0e0;
+  transform: scale(1.05);
 }
 
-/* 🚫 Désactive les cases déjà jouées */
 .cell:disabled {
-    cursor: not-allowed; /* Change le curseur pour montrer que l'on ne peut pas cliquer */
-    background-color: #bbb; /* Change la couleur pour montrer qu'elle est occupée */
+  cursor: not-allowed;
+  background-color: #ddd;
 }
 
-/* 🎉 Fenêtre de fin de partie (victoire ou match nul) */
+/* Fenêtre de fin de partie (victoire ou match nul) */
 .game-over {
-    background: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
-    color: white; /* Texte blanc */
-    padding: 20px; /* Espace intérieur */
-    border-radius: 10px; /* Bords arrondis */
-    display: inline-block; /* Permet d'adapter la taille au contenu */
-    margin-top: 20px; /* Espacement avec le plateau */
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  display: inline-block;
+  margin-top: 30px;
 }
 
-/* 🔄 Bouton "Jeu suivant" */
-.game-over button {
-    background-color: #027bbc; /* Bleu vif */
-    color: white; /* Texte blanc */
-    padding: 10px 20px; /* Espacement intérieur */
-    border: none; /* Supprime la bordure */
-    border-radius: 5px; /* Bords arrondis */
-    cursor: pointer; /* Curseur de clic */
-    font-size: 1.2em; /* Taille du texte */
-    margin-top: 10px; /* Espacement en haut */
-    transition: background 0.3s; /* Effet fluide au survol */
+.game-over h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-/* 🎨 Effet de survol du bouton */
-.game-over button:hover {
-    background-color: #025a8c; /* Bleu plus foncé au survol */
+.countdown {
+  font-size: 1.5rem;
+  font-style: italic;
 }
