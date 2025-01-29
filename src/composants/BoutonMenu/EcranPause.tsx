@@ -3,18 +3,23 @@ import { Link } from "react-router-dom";
 
 interface EcranPauseProps {
   onClose: () => void; 
+  onPauseToggle: () => void;
 }
 
-
-function EcranPause({ onClose }: EcranPauseProps) {
+function EcranPause({ onClose, onPauseToggle }: EcranPauseProps) {
   return (
     <div className="modal-overlay">
-        <div className="bloc">
-      <button onClick={onClose}>REPRENDRE</button>
-      <button >
-         <Link className="button"  to="/" onClick={onClose}>QUITTER</Link>
+      <div className="bloc">
+        <button onClick={() => {
+          onClose();
+          onPauseToggle(); 
+        }}>
+          REPRENDRE
         </button>
-        </div>
+        <button>
+          <Link className="button" to="/" onClick={onClose}>QUITTER</Link>
+        </button>
+      </div>
     </div>
   );
 }
