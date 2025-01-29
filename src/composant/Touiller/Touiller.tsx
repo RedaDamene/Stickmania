@@ -102,7 +102,6 @@ const Touiller = () => {
             }, [Score]);
     return (
         <div>
-            {Score}
             <div className='Bol'></div>
             <div className='Center' ref={Center}></div>
             <div className='Cuillere' ref={Cuillere}></div>
