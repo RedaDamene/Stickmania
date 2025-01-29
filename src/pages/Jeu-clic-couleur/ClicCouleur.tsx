@@ -69,13 +69,9 @@ const ClicCouleur: React.FC = () => {
 
   useEffect(() => {
     if (jeuTerminé) {
-      const timer = setTimeout(() => {
-        navigate("/app/autre-jeu"); // Remplacez "/app/autre-jeu" par le chemin vers votre autre jeu
-      }, 3000);
-
-      return () => clearTimeout(timer);
+      navigate("/app/PageFin", { state: { score } });
     }
-  }, [jeuTerminé, navigate]);
+  }, [jeuTerminé, navigate, score]);
 
   return (
     <div className="jeu-container full-screen">
@@ -115,15 +111,7 @@ const ClicCouleur: React.FC = () => {
             ))}
           </div>
         </>
-      ) : (
-        <div className="fin-jeu">
-          <h2 className="titre">
-            {score > 8 ? "Bien joué !" : "Tu as perdu !"}
-          </h2>
-          <p className="info">Score final : {score}</p>
-          <p className="info">Redirection vers un autre jeu dans 3 secondes...</p>
-        </div>
-      )}
+      ) : null}
     </div>
   );
 };

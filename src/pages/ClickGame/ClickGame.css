@@ -1,13 +1,13 @@
 /* Conteneur principal : taille pleine, centrage, dégradé en arrière-plan */
 .click-game-container {
     min-height: 100vh;      
-    min-width: 100vh;         /* Prend toute la hauteur de la fenêtre */
-    display: flex;                /* Pour pouvoir centrer en flex */
-    flex-direction: column;       /* Empile verticalement */
-    align-items: center;          /* Centre horizontalement */
-    justify-content: center;      /* Centre verticalement */
-    background: radial-gradient(#434343, #000000); /* Dégradé radial sombre */
-    color: #ffffff;               /* Texte blanc */
+    min-width: 100vh; 
+    display: flex; 
+    flex-direction: column;  
+    align-items: center;   
+    justify-content: center;   
+    background: radial-gradient(#434343, #000000); 
+    color: #ffffff;        
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 1rem;
