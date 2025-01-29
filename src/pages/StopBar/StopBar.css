@@ -5,13 +5,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #1a1a1a;
-    color: white;
+    color: black;
 }
 
 .game-title {
     font-size: 2rem;
     margin-bottom: 2rem;
+    color: black;
 }
 
 .game-bar {
@@ -45,11 +45,12 @@
     font-size: 1.5rem;
     text-align: center;
     margin-top: 1rem;
+    color: black;
 }
 
 .countdown {
     margin-top: 20px;
     font-size: 1.2rem;
-    color: white;
+    color: black;
     font-weight: bold;
 }
