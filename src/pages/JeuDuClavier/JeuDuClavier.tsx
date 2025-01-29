@@ -1,8 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import "./JeuDuClavier.css";
-import backgroundImg from "../../assets/Stickmania.png"; // Image de fond
 
 const JeuDuClavier: React.FC = () => {
+  const navigate = useNavigate();
+
+  const retourAccueil = () => {
+    navigate("/"); // Redirige vers la route d'accueil
+  };
+
   // Liste des mots à taper (20 mots)
   const mots = [
     "chocolat", "ordinateur", "react", "typescript", "jeu", "clavier",
@@ -76,7 +82,7 @@ const JeuDuClavier: React.FC = () => {
       if (currentWordIndex === shuffledWords.length - 1) {
         setIsGameOver(true); // Fin du jeu (victoire)
       }
-    } 
+    }
     // Vérifie si l'utilisateur a fait une erreur
     else if (!shuffledWords[currentWordIndex].startsWith(value)) {
       setLives((prev) => prev - 1); // Réduit le nombre de vies
@@ -109,13 +115,13 @@ const JeuDuClavier: React.FC = () => {
         {showLightbox ? (
           <div className="lightbox">
             <h2>Vous avez perdu !</h2>
-            <button onClick={restartGame}>Jeu suivant</button>
+            <button onClick={retourAccueil}>Jeu suivant</button>
           </div>
         ) : isGameOver ? (
           // Affichage de l'écran de fin (victoire ou défaite)
           <div className="game-over">
             <h2>{currentWordIndex === shuffledWords.length ? "Félicitations, vous avez gagné !" : "Perdu !"}</h2>
-            <button onClick={restartGame}>Jeu suivant</button>
+            <button onClick={retourAccueil}>Jeu suivant</button>
           </div>
         ) : (
           // Affichage du jeu en cours

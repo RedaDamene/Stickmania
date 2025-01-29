@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import App from "./App";
-import JeuDuClavier from "./composent/JeuDuClavier/JeuDuClavier";
+import JeuDuClavier from "./pages/JeuDuClavier/JeuDuClavier";
 export const Router = () => {
     return (
         <BrowserRouter>
