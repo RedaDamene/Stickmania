@@ -1,0 +1,56 @@
+/* Conteneur principal : taille pleine, centrage, dégradé en arrière-plan */
+.click-game-container {
+    min-height: 100vh;            /* Prend toute la hauteur de la fenêtre */
+    display: flex;                /* Pour pouvoir centrer en flex */
+    flex-direction: column;       /* Empile verticalement */
+    align-items: center;          /* Centre horizontalement */
+    justify-content: center;      /* Centre verticalement */
+    background: radial-gradient(#434343, #000000); /* Dégradé radial sombre */
+    color: #ffffff;               /* Texte blanc */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  /* Titre du jeu */
+  .click-game-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  
+  /* Affichage du score et du temps restant */
+  .click-game-stats {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Texte à la fin de la partie */
+  .click-game-end {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ff5555; /* Couleur rouge pour signaler la fin */
+  }
+  
+  /* Bouton */
+  .click-game-button {
+    background-color: #ff0077;   /* Couleur de fond */
+    border: none;                /* Pas de bordure */
+    border-radius: 0.5rem;       /* Bords arrondis */
+    color: #ffffff;              /* Texte blanc */
+    padding: 1rem 2rem;          /* Espace interne */
+    cursor: pointer;             /* Pointeur au survol */
+    font-size: 1.1rem;           /* Taille du texte */
+    transition: transform 0.2s, background-color 0.2s;
+    margin-top: 1rem;
+  }
+  
+  /* Effet au survol du bouton */
+  .click-game-button:hover {
+    transform: scale(1.05);      /* Légère mise en avant */
+    background-color: #ff3399;   /* Couleur un peu plus claire */
+  }
+  
