@@ -1,14 +1,17 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Jeu-timing.css'
 
 export default function JeuTiming() {
+    const navigate = useNavigate()
     const [estActif, setEstActif] = useState(false)
     const [tempsDebut, setTempsDebut] = useState(null)
     const [tempsReaction, setTempsReaction] = useState(null)
     const [jeuDemarre, setJeuDemarre] = useState(false)
     const [aPerdu, setAPerdu] = useState(false)
     const [aGagne, setAGagne] = useState(false)
-    const LIMITE_TEMPS = 400 // 400ms = 0.4 seconde
+    const [compteARebours, setCompteARebours] = useState(null)
+    const LIMITE_TEMPS = 500 // 500ms = 0.5 seconde
 
     useEffect(() => {
         if (jeuDemarre && !estActif) {
@@ -24,15 +27,28 @@ export default function JeuTiming() {
     useEffect(() => {
         if (estActif) {
             const minuteurDefaite = setTimeout(() => {
-                setTempsReaction('Trop lent ! (plus de 400ms)')
+                setTempsReaction('Trop lent ! (plus de 500ms)')
                 setEstActif(false)
                 setJeuDemarre(false)
                 setAPerdu(true)
+                setCompteARebours(3)
             }, LIMITE_TEMPS)
 
             return () => clearTimeout(minuteurDefaite)
         }
     }, [estActif])
+
+    // Nouvelle logique pour le compte à rebours et la redirection
+    useEffect(() => {
+        if (compteARebours !== null && compteARebours > 0) {
+            const timer = setTimeout(() => {
+                setCompteARebours(prev => prev - 1)
+            }, 1000)
+            return () => clearTimeout(timer)
+        } else if (compteARebours === 0) {
+            navigate('/app/JeuDuClavier')
+        }
+    }, [compteARebours, navigate])
 
     useEffect(() => {
         const gererToucheClavier = (evenement) => {
@@ -55,11 +71,13 @@ export default function JeuTiming() {
             const reaction = tempsFin - tempsDebut
 
             if (reaction > LIMITE_TEMPS) {
-                setTempsReaction('Trop lent ! (plus de 400ms)')
+                setTempsReaction('Trop lent ! (plus de 500ms)')
                 setAPerdu(true)
+                setCompteARebours(3)
             } else {
                 setTempsReaction(reaction)
                 setAGagne(true)
+                setCompteARebours(3)
             }
 
             setEstActif(false)
@@ -68,15 +86,6 @@ export default function JeuTiming() {
             setTempsReaction('Trop tôt !')
             setJeuDemarre(false)
         }
-    }
-
-    const reinitialiserJeu = () => {
-        setAPerdu(false)
-        setAGagne(false)
-        setJeuDemarre(false)
-        setEstActif(false)
-        setTempsReaction(null)
-        setTempsDebut(null)
     }
 
     const obtenirCouleurFond = () => {
@@ -108,13 +117,10 @@ export default function JeuTiming() {
                     }
                 </div>
             )}
-            {(aPerdu || aGagne) && (
-                <button 
-                    onClick={reinitialiserJeu}
-                    className="game-button"
-                >
-                    {aPerdu ? 'Recommencer' : 'Rejouer'}
-                </button>
+            {compteARebours !== null && (
+                <div className="countdown">
+                    Passage au jeu suivant dans {compteARebours}...
+                </div>
             )}
         </div>
     )

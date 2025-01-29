@@ -70,3 +70,10 @@ html, body {
 .game-button:hover {
     transform: scale(1.05);
 }
+
+.countdown {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: red;
+    font-weight: bold;
+}
