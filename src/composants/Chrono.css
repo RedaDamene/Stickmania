@@ -1,0 +1,28 @@
+.Class_Chrono_fond{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 3px solid black;
+    width: 25vw;
+    min-width: 132px;
+    padding-left: 10px;
+    max-width: 220px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    height: 59px;
+    background: linear-gradient(#ECECEC 2%,#76C92B 20%, #54BF36 60%, #692216);
+}
+
+.Class_Text_Gauche{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Class_Chrono_Droit{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
