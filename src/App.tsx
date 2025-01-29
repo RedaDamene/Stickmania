@@ -2,7 +2,6 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import TapeTaupe from './composants/TapeTaupe/TapeTaupe'
 
 function App() {
   const [count, setCount] = useState(0)
