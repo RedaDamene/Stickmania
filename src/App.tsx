@@ -1,11 +1,13 @@
 import './App.css'
-import Score from './composants/Score/Score'
 
 function App() {
 
   return (    
     <>
-      <Score/>
+      <div>
+        <h1>Home</h1>
+        <p>This is the home page</p>
+      </div>
     </>
   )
 }
