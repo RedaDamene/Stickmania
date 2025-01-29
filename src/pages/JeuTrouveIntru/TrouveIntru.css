@@ -1,0 +1,10 @@
+.grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+button{
+  height: 50px;
+  margin: 5px;
+}

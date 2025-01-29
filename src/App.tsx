@@ -1,11 +1,11 @@
 import './App.css'
-import Score from './composants/Score/Score'
+import TrouveIntru from './pages/JeuTrouveIntru/TrouveIntru';
 
 function App() {
 
   return (    
     <>
-      <Score/>
+      <TrouveIntru/>
     </>
   )
 }
