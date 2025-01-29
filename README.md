@@ -1,6 +1,19 @@
 # Stickmania
 Creation d'un wario ware 
 
+Les membres de l'équipe sont :
+- Souvanny
+- Léo
+- Martin
+- Les deux Mathis
+- Tom
+- Reda
+- Alexis
+- Nathanael
+- Aimen
+- Jonathan
+- Enzo
+
 # Conventions de Nommage et de Commit
 
 Ce document décrit les conventions à respecter pour les noms de fichiers, dossiers, branches, et les messages de commit dans ce projet React.
