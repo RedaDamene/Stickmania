@@ -1,0 +1,62 @@
+body {
+    place-items: top;
+}
+
+.Cuillere {
+    position:absolute;
+    z-index: 1000;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+}
+
+.Check1 {
+    background-color: #f00;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+}
+
+.Center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: blue;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    border: 1px solid black;
+}
+
+.Bol {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: green;
+    border-radius: 50%;
+    width: 600px;
+    height: 600px;
+}
+
+.Point{
+    position: absolute;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 5;
+    background-color: blue
+
+}
+
+.Line{
+  position: absolute;
+  height: 2px;
+  transform-origin: 0 50%;
+
+}
