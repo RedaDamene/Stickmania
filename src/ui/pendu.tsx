@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import PenduImages, { GetRandomWord } from "../Composants/pendu";
+import PenduImages, { GetRandomWord } from "../composants/Pendu/pendu";
 import "./pendu.css"; // Import du fichier CSS
 
 const PenduUI = () => {
