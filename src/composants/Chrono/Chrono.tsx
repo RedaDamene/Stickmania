@@ -19,7 +19,6 @@ const Chrono: React.FC<ChronoProps> = ({ tempsDeJeu, reussite, pause }) => {
       setChrono(tempsDeJeu); // Réinitialise le chrono en cas de réussite
       return;
     }
-
     if(!pause) {
       if (chrono > 0) {
         const interval = setInterval(() => {
@@ -33,7 +32,7 @@ const Chrono: React.FC<ChronoProps> = ({ tempsDeJeu, reussite, pause }) => {
     if (chrono === 0) {
       navigate("/"); // Redirige si le chrono atteint 0
     }
-  }, [chrono, reussite, navigate, tempsDeJeu]);
+  }, [chrono, reussite, navigate, tempsDeJeu, pause]);
 
   return (
     <div className="Class_Chrono_fond">

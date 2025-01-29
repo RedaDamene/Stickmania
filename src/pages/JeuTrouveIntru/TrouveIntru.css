@@ -8,3 +8,7 @@ button{
   height: 50px;
   margin: 5px;
 }
+
+html{
+  background-image: url("../../assets/Stickmania_3.png");
+}

@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("../../assets/Stickmania_3.png");
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  button {
+    background-color: #76c92b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .wall {
+    background-color: #76c92b;
+    border-radius: 4px;
+  }
+  
+  .start, .end {
+    border: 2px solid;
+    border-radius: 50%;
+  }
+  
+  .start {
+    background-color: #4caf50;
+    border-color: #388e3c;
+  }
+  
+  .end {
+    background-color: #ffeb3b;
+    border-color: #fbc02d;
+  }
+  

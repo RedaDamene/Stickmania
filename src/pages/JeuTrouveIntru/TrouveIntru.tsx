@@ -13,7 +13,7 @@ const TrouveIntru: React.FC = () => {
   const [intruderIndex, setIntruderIndex] = useState<number>(0);
   const [gameOver, setGameOver] = useState<boolean>(false);
   const [gameWon, setGameWon] = useState<boolean>(false);
-  const [timer, setTimer] = useState<number>(9);
+  const [timer, setTimer] = useState<number>(5);
   const [round, setRound] = useState<number>(1);
   const [baseColor, setBaseColor] = useState<string>(generateColor());
   const [intruderColor, setIntruderColor] = useState<string>(baseColor);
@@ -45,7 +45,7 @@ const TrouveIntru: React.FC = () => {
 
   const handleClick = (index: number): void => {
     if (index === intruderIndex) {
-      if (round < 5) {
+      if (round < 4) {
         setGridSize((prev) => prev + 1);
         setRound((prev) => prev + 1);
       } else {
@@ -61,15 +61,12 @@ const TrouveIntru: React.FC = () => {
     setGameOver(false);
     setGameWon(false);
     setRound(1);
-    setTimer(9);
+    setTimer(5);
     setBaseColor(generateColor());
   };
 
   return (
-    <div>
-      <h1>Trouvez l'intrus</h1>
-      <p>Temps restant: {timer}s</p>
-      <p>Round: {round}/5</p>
+    <div className="trouveIntru">
       {!gameOver && !gameWon ? (
         <div
           className="grid gap-3"
