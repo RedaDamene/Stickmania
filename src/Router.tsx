@@ -6,14 +6,16 @@ import JeuTrouveIntru from "./pages/JeuTrouveIntru/TrouveIntru";
 import JeuMorpion from "./pages/Morpion/Jeu-Morpion";
 import JeuDuClavier from "./pages/JeuDuClavier/JeuDuClavier";
 import ClicCouleur from "./composants/ClicCouleur/ClicCouleur";
+import PagePrincipale from "./pages/PagePrincipale/PagePrincipale";
 import ClickGame from "./composants/ClickGame/ClickGame";
+
 
 export const Router = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<App />} />
-                <Route path="/app" element="Hello World" />
+                <Route path="/" element={<PagePrincipale />} />
+                <Route path="/app" element={<App />} />
                 <Route path="/app/jeuTiming" element={<JeuTiming />} />
                 <Route path="/app/jeuTapeTaupe" element={<JeuTapeTaupe/>}/>
                 <Route path="/app/jeuTrouveIntru" element={<JeuTrouveIntru/>}/>

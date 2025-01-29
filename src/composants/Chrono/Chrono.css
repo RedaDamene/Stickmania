@@ -1,5 +1,7 @@
-.Class_Chrono_fond{
+.Class_Chrono_fond {
     position: absolute;
+    top: 10px;
+    right: 10%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -11,16 +13,16 @@
     box-sizing: border-box;
     border-radius: 10px;
     height: 59px;
-    background: linear-gradient(#ECECEC 2%,#76C92B 20%, #54BF36 60%, #692216);
+    background: linear-gradient(#ececec 2%, #76c92b 20%, #54bf36 60%, #692216);
 }
 
-.Class_Text_Gauche{
+.Class_Text_Gauche {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.Class_Chrono_Droit{
+.Class_Chrono_Droit {
     width: 50%;
     display: flex;
     align-items: center;
