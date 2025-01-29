@@ -1,0 +1,68 @@
+/* 🎯 Conteneur principal du jeu */
+.morpion-container {
+    font-family: Arial, sans-serif; /* Police générale */
+    text-align: center; /* Centrer les éléments */
+    margin-top: 50px; /* Espacement par rapport au haut de la page */
+}
+
+/* 🎯 Plateau de jeu 3x3 */
+.board {
+    display: grid; /* Utilisation de CSS Grid pour disposer les cases */
+    grid-template-columns: repeat(3, 100px); /* 3 colonnes de 100px */
+    grid-template-rows: repeat(3, 100px); /* 3 lignes de 100px */
+    gap: 5px; /* Espacement entre les cases */
+    justify-content: center; /* Centre le plateau horizontalement */
+    margin: 20px auto; /* Marge extérieure et centrage automatique */
+}
+
+/* 🎯 Style de chaque case du morpion */
+.cell {
+    width: 100px; /* Largeur d'une case */
+    height: 100px; /* Hauteur d'une case */
+    font-size: 2em; /* Taille du texte X ou O */
+    font-weight: bold; /* Rendre le texte en gras */
+    text-align: center; /* Centrer le texte */
+    background-color: #f3f3f3; /* Couleur de fond */
+    border: 2px solid #333; /* Bordure foncée */
+    cursor: pointer; /* Curseur en forme de main pour indiquer le clic */
+    transition: background 0.3s; /* Animation fluide pour hover */
+}
+
+/* 🎨 Effet de survol */
+.cell:hover {
+    background-color: #e0e0e0; /* Change légèrement la couleur au survol */
+}
+
+/* 🚫 Désactive les cases déjà jouées */
+.cell:disabled {
+    cursor: not-allowed; /* Change le curseur pour montrer que l'on ne peut pas cliquer */
+    background-color: #bbb; /* Change la couleur pour montrer qu'elle est occupée */
+}
+
+/* 🎉 Fenêtre de fin de partie (victoire ou match nul) */
+.game-over {
+    background: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+    color: white; /* Texte blanc */
+    padding: 20px; /* Espace intérieur */
+    border-radius: 10px; /* Bords arrondis */
+    display: inline-block; /* Permet d'adapter la taille au contenu */
+    margin-top: 20px; /* Espacement avec le plateau */
+}
+
+/* 🔄 Bouton "Jeu suivant" */
+.game-over button {
+    background-color: #027bbc; /* Bleu vif */
+    color: white; /* Texte blanc */
+    padding: 10px 20px; /* Espacement intérieur */
+    border: none; /* Supprime la bordure */
+    border-radius: 5px; /* Bords arrondis */
+    cursor: pointer; /* Curseur de clic */
+    font-size: 1.2em; /* Taille du texte */
+    margin-top: 10px; /* Espacement en haut */
+    transition: background 0.3s; /* Effet fluide au survol */
+}
+
+/* 🎨 Effet de survol du bouton */
+.game-over button:hover {
+    background-color: #025a8c; /* Bleu plus foncé au survol */
+}
