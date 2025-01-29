@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./ClicCouleur.css";
-import { Button } from "../ui/button";
+import { Button } from "../ui/buttonClicCouleur";
 
 const ClicCouleur: React.FC = () => {
     const [score, setScore] = useState(0);
@@ -26,8 +26,8 @@ const ClicCouleur: React.FC = () => {
           couleur: couleur.code,
           nomCouleur: couleur.nom,
           position: {
-            top: `${Math.random() * 80 + 10}%`,
-            left: `${Math.random() * 80 + 10}%`,
+            top: `${Math.random() * 20 + 10}%`, // Ajustement vertical pour limiter l'espace jouable
+            left: `${Math.random() * 80 + 15}%`,
           },
         };
       });

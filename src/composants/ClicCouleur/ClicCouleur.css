@@ -1,3 +1,17 @@
+/* Conteneur principal du fond */
+.background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--background-image, rgba(0, 0, 0, 0)); /* Fond transparent par défaut */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; /* Place le fond derrière le jeu */
+}
+
 /* Assurez-vous que le jeu occupe toute la page */
 .jeu-container {
     position: absolute;
@@ -5,13 +19,13 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #000000;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: Arial, sans-serif;
     overflow: hidden;
+    background: transparent; /* Assure que le jeu lui-même n'a pas de fond */
 }
 
 /* Style du titre */
