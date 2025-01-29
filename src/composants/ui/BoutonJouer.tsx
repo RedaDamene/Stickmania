@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function BoutonJouer () {
   return (
     <>
-      <Link to="/app/jeuTiming">
+      <Link to="/app">
         <button className="">
           <img src="/images/BoutonJouer.png" alt="Jouer" />
         </button>
