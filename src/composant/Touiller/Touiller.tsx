@@ -2,39 +2,15 @@ import React from 'react';
 import './Touiller.css';
 import { useState } from 'react';
 
-const CircleWithPoints = ({ centreX,centreY }: { centreX: number, centreY : number }) => {
-    const radius = 300; // Half the size of the circle (Bol width/height)
-    const centerX =  centreX;
-    const centerY = centreY;
-    const pointRadius = 5; // Size of each point
-    const numberOfPoints = 50; // Number of points to place
 
-    // Calculate positions of points
-    const points = Array.from({ length: numberOfPoints }, (_, index) => {
-      const angle = (2 * Math.PI * index) / numberOfPoints;
-      const x = centerX + radius * Math.cos(angle) - pointRadius;
-      const y = centerY + radius * Math.sin(angle) - pointRadius;
-      return { x, y };
-    });
-
-    return (
-        <div>
-            {points.map((point, index) => (
-                <div key={index} className='Point' style={{ top: point.y, left: point.x }}/>
-            ))}
-
-        </div>
-      );
-};
 
 
 const Touiller = () => {
     const [Score, setScore] = useState(0);
     const [CenterCoords, setCenterCoords] = useState({ x: 0, y: 0 });
     const Cuillere = React.useRef<HTMLDivElement>(null);
-    const Check1 = React.useRef<HTMLDivElement>(null);
     const Center = React.useRef<HTMLDivElement>(null);
-    const radius = 300; // Half the size of the circle (Bol width/height)
+    const radius = 150; // Half the size of the circle (Bol width/height)
     const pointRadius = 5; // Size of each point
     const numberOfPoints = 50; // Number of points to place
 
@@ -114,12 +90,12 @@ const Touiller = () => {
         return () => clearInterval(interval);
         }, []);
         React.useEffect(() => {
-            if (Score >= 100) {
+            if (Score >= 200) {
                 (document.querySelector('.Bol') as HTMLElement)!.style.backgroundColor = 'purple';
                 console.log("you win");
-            } else if (Score >= 50) {
+            } else if (Score >= 150) {
                 (document.querySelector('.Bol') as HTMLElement)!.style.backgroundColor = 'red';
-            } else if (Score >= 20) {
+            } else if (Score >= 50) {
                 (document.querySelector('.Bol') as HTMLElement)!.style.backgroundColor = 'orange';
             }
             console.log(Score);
