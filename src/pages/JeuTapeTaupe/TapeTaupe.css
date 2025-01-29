@@ -1,45 +1,44 @@
 .game-container {
-    text-align: center;
-    font-family: Arial, sans-serif;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-image: url("../../assets/Stickmania_3.png");
+}
+
+.holes {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  margin-top: 20px;
+  justify-items: center;
+}
+
+.hole {
+  width: 100px;
+  height: 100px;
+  background-image: url("../../assets/trou.png");
+  border-radius: 0%;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.mole {
+  width: 80px;
+  height: 80px;
+  background-image: url("../../assets/taupe.png");
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  animation: popUp 0.5s ease;
+}
+
+@keyframes popUp {
+  from {
+    transform: translateY(100%);
   }
-  
-  .holes {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1px;
-    margin-top: 20px;
-    justify-items: center;
+
+  to {
+    transform: translateY(0);
   }
-  
-  .hole {
-    width: 100px;
-    height: 100px;
-    /* background-color: #654321; */
-    background-image: url("../../assets/trou.png");
-    border-radius: 0%;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    /*box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.5);*/
-  }
-  
-  .mole {
-    width: 80px;
-    height: 80px;
-    background-image: url("../../assets/taupe.png");
-    border-radius: 50%;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    animation: popUp 0.5s ease;
-  }
-  
-  @keyframes popUp {
-    from {
-      transform: translateY(100%);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-  
+}
