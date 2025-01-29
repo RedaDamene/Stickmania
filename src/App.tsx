@@ -1,8 +1,8 @@
 // import React from 'react';
-import AppRoutes from './Routes'; // Importer AppRoutes
+import PagePrincipale from './page/PagePrincipale';
 
 const App = () => {
-  return <AppRoutes />; // Utiliser AppRoutes ici
+  return <PagePrincipale />;
 };
 
 export default App;

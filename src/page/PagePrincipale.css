@@ -7,15 +7,21 @@ body {
     min-height: 100vh;
   }
   
-.App {
+  .container {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100%;  /* Assure que la div occupe toute la hauteur de la fenêtre */
+    width: 100%;
+  }
+
+  .bouton {
+    display: flex;
+    justify-content: center; /* centre horizontalement */
+    align-items: center;     /* centre verticalement dans la div .bouton */
+    width: 50px;             /* la div .bouton s'étend sur toute la largeur */
+    height: 20px;
+    margin: 0;               /* s'assurer qu'aucune marge n'interfère */
+    padding: 0;              /* idem pour le padding */
   }
   
-  .App img {
-    width: 200px;      /* Adaptable */
-    height: auto;
-    border-radius: 8px;
-  }

@@ -1,16 +1,13 @@
 // PagePrincipale.js
 import React from "react";
 import "./PagePrincipale.css";
-import imageSrc from "../assets/images/Stickmania_1.png"; 
+// import imageSrc from "/images/Stickmania_1.png"; 
+import BoutonJouer from "../ui/BoutonJouer";
 
 function PagePrincipale() {
   return (
-    <div className="App">
-      <div>
-        <img src={imageSrc} alt="menu principal" />
-      </div>
-      <div>
-      </div>
+    <div className="container">
+      <BoutonJouer/>
     </div>
   );
 }

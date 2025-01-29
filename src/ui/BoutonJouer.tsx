@@ -5,7 +5,7 @@ function BoutonJouer () {
   return (
     <>
       <Link to="/Jeux1">
-        <button className="">
+        <button className="bouton">
           <img src="/images/BoutonJouer.png" alt="Jouer" />
         </button>
       </Link>
