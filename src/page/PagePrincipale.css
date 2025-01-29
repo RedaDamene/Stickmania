@@ -16,9 +16,6 @@ body {
   }
 
   .bouton {
-    display: flex;
-    justify-content: center; /* centre horizontalement */
-    align-items: center;     /* centre verticalement dans la div .bouton */
     width: 50px;             /* la div .bouton s'étend sur toute la largeur */
     height: 20px;
     margin: 0;               /* s'assurer qu'aucune marge n'interfère */
