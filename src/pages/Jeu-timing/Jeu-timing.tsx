@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react'
 import './Jeu-timing.css'
 
-export default function JeuTiming() {
+interface JeuTimingProps {
+    statut: (statut: string) => void;
+}
+
+export default function JeuTiming(props: JeuTimingProps) {
     const [estActif, setEstActif] = useState(false)
     const [tempsDebut, setTempsDebut] = useState(null)
     const [tempsReaction, setTempsReaction] = useState(null)
@@ -25,6 +29,7 @@ export default function JeuTiming() {
         if (estActif) {
             const minuteurDefaite = setTimeout(() => {
                 setTempsReaction('Trop lent ! (plus de 400ms)')
+                props.statut("perdu")
                 setEstActif(false)
                 setJeuDemarre(false)
                 setAPerdu(true)
@@ -57,15 +62,24 @@ export default function JeuTiming() {
             if (reaction > LIMITE_TEMPS) {
                 setTempsReaction('Trop lent ! (plus de 400ms)')
                 setAPerdu(true)
+                console.log("ok")
+
+                props.statut("perdu")
             } else {
                 setTempsReaction(reaction)
                 setAGagne(true)
+                console.log("ok")
+                props.statut("gagne")
+
             }
 
             setEstActif(false)
             setJeuDemarre(false)
         } else if (!aPerdu && !aGagne) {
             setTempsReaction('Trop tôt !')
+            console.log("ok")
+
+            props.statut("perdu")
             setJeuDemarre(false)
         }
     }

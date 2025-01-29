@@ -1,7 +1,11 @@
 import React, { useState, useRef } from "react";
 import './souriciere.css'; 
 
-const Labyrinthe = () => {
+interface LabyrintheProps {
+  statut: (statut: string) => void;
+}
+
+const Labyrinthe = (props : LabyrintheProps) => {
   const [started, setStarted] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [completed, setCompleted] = useState(false);
@@ -21,7 +25,14 @@ const Labyrinthe = () => {
   };
 
   const handleMouseMove = (e) => {
-    if (!started || gameOver || completed) return;
+    if (!started || gameOver || completed) {
+      if (gameOver){
+        console.log("Perdu");
+        props.statut("perdu");
+      } else if (completed){
+        props.statut("gagne");
+      }
+    };
 
     const cursor = e.target;
 
