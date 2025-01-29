@@ -19,9 +19,7 @@ const Chrono: React.FC<ChronoProps> = ({ tempsDeJeu, reussite, pause }) => {
       setChrono(tempsDeJeu); // Réinitialise le chrono en cas de réussite
       return;
     }
-    console.log("JE SUIS LA")
     if(!pause) {
-      console.log("ICI AUSSI")
       if (chrono > 0) {
         const interval = setInterval(() => {
           setChrono((prev) => prev - 1);
