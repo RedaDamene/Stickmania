@@ -1,7 +1,6 @@
 // PagePrincipale.js
 import React from "react";
 import "./PagePrincipale.css";
-// import imageSrc from "/images/Stickmania_1.png"; 
 import BoutonJouer from "../ui/BoutonJouer";
 
 function PagePrincipale() {

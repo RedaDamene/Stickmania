@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./ClicCouleur.css";
-import { Button } from "../ui/button";
 
 const ClicCouleur: React.FC = () => {
     const [score, setScore] = useState(0);

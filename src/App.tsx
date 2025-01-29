@@ -1,14 +1,22 @@
+import { useNavigate } from 'react-router-dom'
 import './App.css'
 
 function App() {
+  const navigate = useNavigate()
 
-  return (    
-    <>
-      <div>
-        <h1>Home</h1>
-        <p>This is the home page</p>
-      </div>
-    </>
+  const handlePlay = () => {
+    navigate('/app/jeuTiming')
+  }
+
+  return (
+    <div className="home-container">
+      <h1 className="home-title">Mini-jeux</h1>
+      <p className="home-description">Une collection de jeux rapides et amusants !</p>
+      <button className="play-button" onClick={handlePlay}>
+        Play
+      </button>
+    </div>
   )
 }
-export default App;
+
+export default App

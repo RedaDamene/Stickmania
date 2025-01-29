@@ -25,11 +25,12 @@ const JeuDuClavier: React.FC = () => {
   const [lives, setLives] = useState(3);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  // Initialiser les mots mélangés
   useEffect(() => {
     setShuffledWords(shuffleArray(mots));
   }, []);
 
-  // Gestion du compte à rebours et redirection
+  // Gestion du compte à rebours et redirection vers le jeu Tape-Taupe
   useEffect(() => {
     if (compteARebours !== null && compteARebours > 0) {
       const timer = setTimeout(() => {
@@ -37,10 +38,11 @@ const JeuDuClavier: React.FC = () => {
       }, 1000);
       return () => clearTimeout(timer);
     } else if (compteARebours === 0) {
-      navigate('/app/ProchainJeu'); // Remplacer par la route du prochain jeu
+      navigate('/app/JeuTapeTaupe');
     }
   }, [compteARebours, navigate]);
 
+  // Gestion du timer principal du jeu
   useEffect(() => {
     if (timer > 0 && !isGameOver) {
       const interval = setInterval(() => setTimer((prev) => prev - 1), 1000);
@@ -51,6 +53,7 @@ const JeuDuClavier: React.FC = () => {
     }
   }, [timer, isGameOver]);
 
+  // Maintenir le focus sur l'input
   useEffect(() => {
     const focusInput = () => {
       if (!isGameOver && inputRef.current) {
@@ -68,6 +71,7 @@ const JeuDuClavier: React.FC = () => {
     };
   }, [isGameOver, currentWordIndex]);
 
+  // Gérer la saisie de l'utilisateur
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setUserInput(value);

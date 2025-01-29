@@ -5,7 +5,6 @@
   left: 0;
   width: 100vw; /* Largeur de l'écran */
   height: 100vh; /* Hauteur de l'écran */
-  background: url("../../assets/Stickmaniajeu.png") no-repeat center center/cover; /* Image de fond */
   z-index: -1; /* Place le fond derrière tout le contenu */
 }
 

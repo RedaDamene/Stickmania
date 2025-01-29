@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./TrouveIntru.css";
 
 const generateColor = (): string => {
@@ -9,6 +10,7 @@ const generateColor = (): string => {
 };
 
 const TrouveIntru: React.FC = () => {
+  const navigate = useNavigate();
   const [gridSize, setGridSize] = useState<number>(3);
   const [intruderIndex, setIntruderIndex] = useState<number>(0);
   const [gameOver, setGameOver] = useState<boolean>(false);
@@ -17,6 +19,7 @@ const TrouveIntru: React.FC = () => {
   const [round, setRound] = useState<number>(1);
   const [baseColor, setBaseColor] = useState<string>(generateColor());
   const [intruderColor, setIntruderColor] = useState<string>(baseColor);
+  const [compteARebours, setCompteARebours] = useState<number | null>(null);
 
   useEffect(() => {
     setIntruderIndex(Math.floor(Math.random() * gridSize * gridSize));
@@ -33,8 +36,21 @@ const TrouveIntru: React.FC = () => {
   useEffect(() => {
     if (timer === 0 && !gameWon) {
       setGameOver(true);
+      setCompteARebours(3);
     }
   }, [timer, gameWon]);
+
+  // Gestion du compte à rebours et redirection
+  useEffect(() => {
+    if (compteARebours !== null && compteARebours > 0) {
+      const timer = setTimeout(() => {
+        setCompteARebours(prev => prev !== null ? prev - 1 : null);
+      }, 1000);
+      return () => clearTimeout(timer);
+    } else if (compteARebours === 0) {
+      navigate('/app/jeuMorpion');
+    }
+  }, [compteARebours, navigate]);
 
   useEffect(() => {
     const newBaseColor = generateColor();
@@ -48,44 +64,46 @@ const TrouveIntru: React.FC = () => {
       if (round < 4) {
         setGridSize((prev) => prev + 1);
         setRound((prev) => prev + 1);
+        setTimer(5); // Reset timer for next round
       } else {
         setGameWon(true);
+        setCompteARebours(3);
       }
     } else {
       setGameOver(true);
+      setCompteARebours(3);
     }
-  };
-
-  const restartGame = (): void => {
-    setGridSize(3);
-    setGameOver(false);
-    setGameWon(false);
-    setRound(1);
-    setTimer(5);
-    setBaseColor(generateColor());
   };
 
   return (
     <div className="trouveIntru">
+      <div className="game-header">
+        <div className="round">Niveau: {round}/4</div>
+        <div className="timer">Temps: {timer}s</div>
+      </div>
+
       {!gameOver && !gameWon ? (
         <div
-          className="grid gap-3"
+          className="grid"
           style={{ gridTemplateColumns: `repeat(${gridSize}, 80px)` }}
         >
           {[...Array(gridSize * gridSize)].map((_, index) => (
             <button
               key={index}
+              className="color-button"
               style={{ backgroundColor: index === intruderIndex ? intruderColor : baseColor }}
               onClick={() => handleClick(index)}
             ></button>
           ))}
         </div>
       ) : (
-        <div className="text-center">
-          <h2>{gameWon ? "Bravo, vous avez gagné!" : "Game Over!"}</h2>
-          <button onClick={restartGame}>
-            Recommencer
-          </button>
+        <div className="game-over">
+          <h2>{gameWon ? "Bravo ! Vous avez gagné !" : "Partie terminée !"}</h2>
+          {compteARebours !== null && (
+            <div className="countdown">
+              Passage au jeu suivant dans {compteARebours}...
+            </div>
+          )}
         </div>
       )}
     </div>
