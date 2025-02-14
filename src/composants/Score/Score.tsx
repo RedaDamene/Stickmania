@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './Score.css'
+import React from "react";
 
 function Score() {
   const [count, setCount] = useState(0)

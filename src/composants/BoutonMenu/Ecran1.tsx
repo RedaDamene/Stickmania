@@ -1,6 +1,7 @@
 import {useState} from "react";
 import BoutonMenu from "./BoutonMenu";
 import EcranPause from "./EcranPause";
+import React from "react";
 
 function Ecran1() {
 

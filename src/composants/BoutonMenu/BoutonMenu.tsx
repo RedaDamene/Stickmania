@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FiAlignJustify } from "react-icons/fi";
 import './BoutonMenu.css';
 import EcranPause from "./EcranPause";
+import React from "react";
 
 interface BoutonMenuProps {
   onPauseToggle: () => void; 

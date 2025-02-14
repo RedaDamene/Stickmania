@@ -10,6 +10,7 @@ import ClickGame from "./pages/ClickGame/ClickGame";
 import StopBar from "./pages/StopBar/StopBar";
 import PagePrincipale from "./pages/PagePrincipale";
 import PageFin from "./pages/PageFin";
+import React from "react";
 
 export const Router = () => {
     return (
